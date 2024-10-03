@@ -120,7 +120,7 @@ def cost_to_mine(hash_rate_ths, network_difficulty, power_watts, electricity_rat
 
     # Calculate the daily BTC revenue from mining
     seconds_per_day = 86400
-    expected_daily_btc = (hash_rate_ths * block_reward_btc * seconds_per_day) / (network_difficulty * 2 ** 32)
+    expected_daily_btc = (hash_rate_ths * 1000000000000 * block_reward_btc * seconds_per_day) / (network_difficulty * 2 ** 32)
 
     # Calculate the time (in days) to mine 1 BTC
     days_to_mine_one_btc = 1 / expected_daily_btc
