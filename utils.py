@@ -46,7 +46,7 @@ def mining_revenue_usd(hash_rate_ths, network_difficulty, block_reward_btc, bitc
 
     # Calculate daily revenue in BTC
     seconds_per_day = 86400
-    expected_daily_btc = (hash_rate_ths * block_reward_btc * seconds_per_day) / (network_difficulty * 2 ** 32)
+    expected_daily_btc = (hash_rate_ths * 1000000000000  * block_reward_btc * seconds_per_day) / (network_difficulty * 2 ** 32)
 
     # Convert BTC revenue to USD
     daily_revenue_usd = expected_daily_btc * bitcoin_price_usd
@@ -75,7 +75,7 @@ def mining_revenue_in_btc(hash_rate_ths, network_difficulty, block_reward_btc):
 
     # Calculate daily revenue in BTC
     seconds_per_day = 86400
-    expected_daily_btc = (hash_rate_ths * block_reward_btc * seconds_per_day) / (network_difficulty * 2 ** 32)
+    expected_daily_btc = (hash_rate_ths * 1000000000000 * block_reward_btc * seconds_per_day) / (network_difficulty * 2 ** 32)
 
     # Calculate monthly and yearly revenue in BTC
     monthly_revenue_btc = expected_daily_btc * 30
