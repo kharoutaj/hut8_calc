@@ -48,7 +48,7 @@ def calculate_profit(params: CalcParams):
     daily_cost, monthly_cost, yearly_cost = mining_cost(params.power_consumption, params.electricity_cost)
     daily_rev_usd, monthly_rev_usd, yearly_rev_usd = mining_revenue_usd(params.hash_rate, difficulty, reward, exchange_rate)
     daily_rev_btc, monthly_rev_btc, yearly_rev_btc = mining_revenue_in_btc(params.hash_rate, difficulty, reward)
-    breakeven = breakeven_months(daily_cost, params.initial_investment)
+    breakeven = breakeven_months(daily_rev_usd - daily_cost, params.initial_investment)
     one_btc_cost = cost_to_mine(params.hash_rate, difficulty, params.power_consumption, params.electricity_cost, reward)
 
     results = {
